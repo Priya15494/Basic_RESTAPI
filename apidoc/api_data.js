@@ -1,0 +1,359 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "/api/v1/cart/addToCart",
+    "title": "Add To Cart",
+    "version": "0.0.1",
+    "group": "create",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productName",
+            "description": "<p>productName of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>description of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "price",
+            "description": "<p>price of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>category of the product passed as a body parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"Item added to Cart successfully\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\tproductId: \"string\",\n\t\t\t\t\t\tproductName: \"string\",\n                        description: \"string\",\n                        availability: boolean,\n\t\t\t\t\t\tcategory: \"string\",\n\t\t\t\t\t\tmodelNo: \"string\",\n\t\t\t\t\t\tprice: number,\n                        subcategory: \"string\",\n                        rating:number,\n                        noOfSubmittedReviews:number,\n                        seller : \"string\"\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.,\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/ecart.js",
+    "groupTitle": "create",
+    "name": "PostApiV1CartAddtocart"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/products/create",
+    "title": "Create Product",
+    "version": "0.0.1",
+    "group": "create",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productName",
+            "description": "<p>productName of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>description of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "price",
+            "description": "<p>price of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>category of the product passed as a body parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"Product Created successfully\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\tproductId: \"string\",\n\t\t\t\t\t\tproductName: \"string\",\n                        description: \"string\",\n                        availability: boolean,\n\t\t\t\t\t\tcategory: \"string\",\n\t\t\t\t\t\tmodelNo: \"string\",\n\t\t\t\t\t\tprice: number,\n                        subcategory: \"string\",\n                        rating:number,\n                        noOfSubmittedReviews:number,\n                        seller : \"string\"\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.,\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/ecart.js",
+    "groupTitle": "create",
+    "name": "PostApiV1ProductsCreate"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/cart/delete/:productId",
+    "title": "Delete product by productId",
+    "version": "0.0.1",
+    "group": "delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productId",
+            "description": "<p>productId of the product passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"Product Removed From Cart Successfully\",\n\t    \"status\": 200,\n\t    \"data\": []\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.,\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/ecart.js",
+    "groupTitle": "delete",
+    "name": "PostApiV1CartDeleteProductid"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/products/:productId/delete",
+    "title": "Delete product by productId",
+    "version": "0.0.1",
+    "group": "delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productId",
+            "description": "<p>productId of the product passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"Product Deleted Successfully\",\n\t    \"status\": 200,\n\t    \"data\": []\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.,\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/ecart.js",
+    "groupTitle": "delete",
+    "name": "PostApiV1ProductsProductidDelete"
+  },
+  {
+    "type": "put",
+    "url": "/api/v1/products/:productId/edit",
+    "title": "Edit product by productId",
+    "version": "0.0.1",
+    "group": "edit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productId",
+            "description": "<p>productId of the product passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"Product Edited Successfully.\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\tproductId: \"string\",\n\t\t\t\t\t\tproductName: \"string\",\n                        description: \"string\",\n                        availability: boolean,\n\t\t\t\t\t\tcategory: \"string\",\n\t\t\t\t\t\tmodelNo: \"string\",\n\t\t\t\t\t\tprice: number,\n                        subcategory: \"string\",\n                        rating:number,\n                        noOfSubmittedReviews:number,\n                        seller : \"string\"\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.,\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/ecart.js",
+    "groupTitle": "edit",
+    "name": "PutApiV1ProductsProductidEdit"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/products/all",
+    "title": "Get all Products",
+    "version": "0.0.1",
+    "group": "read",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"All Product Details Found\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t        productId: \"string\",\n\t\t\t\t\t\tproductName: \"string\",\n                        description: \"string\",\n                        availability: boolean,\n\t\t\t\t\t\tcategory: \"string\",\n\t\t\t\t\t\tmodelNo: \"string\",\n\t\t\t\t\t\tprice: number,\n                        subcategory: \"string\",\n                        rating:number,\n                        noOfSubmittedReviews:number,\n                        seller : \"string\"\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Failed To Find Product Details\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/ecart.js",
+    "groupTitle": "read",
+    "name": "GetApiV1ProductsAll"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/products/view/by/category/:category",
+    "title": "Get Products by category",
+    "version": "0.0.1",
+    "group": "read",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>category of the Product passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"Products Found Successfully.\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\tproductId: \"string\",\n\t\t\t\t\t\tproductName: \"string\",\n                        description: \"string\",\n                        availability: boolean,\n\t\t\t\t\t\tcategory: \"string\",\n\t\t\t\t\t\tmodelNo: \"string\",\n\t\t\t\t\t\tprice: number,\n                        subcategory: \"string\",\n                        rating:number,\n                        noOfSubmittedReviews:number,\n                        seller : \"string\"\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.,\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/ecart.js",
+    "groupTitle": "read",
+    "name": "GetApiV1ProductsViewByCategoryCategory"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/products/view/:productId",
+    "title": "Get a single product",
+    "version": "0.0.1",
+    "group": "read",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productId",
+            "description": "<p>The productId should be passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"Product Found Successfully.\",\n\t    \"status\": 200,\n\t    \"data\": {\n\t    \t\t\t    productId: \"string\",\n\t\t\t\t\t\tproductName: \"string\",\n                        description: \"string\",\n                        availability: boolean,\n\t\t\t\t\t\tcategory: \"string\",\n\t\t\t\t\t\tmodelNo: \"string\",\n\t\t\t\t\t\tprice: number,\n                        subcategory: \"string\",\n                        rating:number,\n                        noOfSubmittedReviews:number,\n                        seller : \"string\"\n\t\t\t\t}\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/ecart.js",
+    "groupTitle": "read",
+    "name": "GetApiV1ProductsViewProductid"
+  }
+] });
